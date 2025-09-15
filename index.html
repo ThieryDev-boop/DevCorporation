@@ -1,12 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – Thiery Mouncharou</title>
+<title>Présentation Entreprise avec QR Code</title>
 <style>
-    /* ----- Styles de base ----- */
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    header {
+        background: linear-gradient(135deg, #4a90e2, #0078d4);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    section {
+        margin-bottom: 40px;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #0078d4;
+        margin-top: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        background: #e8f0fe;
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .qr-section {
+        text-align: center;
+    }
+
+    .qr-section img {
+        margin-top: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #f0f0f0;
+        color: #555;
+        margin-top: 40px;
+    }
+
+
+        /* ----- Styles de base ----- */
     :root {
         --primary: #0078d4;
         --dark: #222;
@@ -151,6 +227,47 @@
 <body>
 
 <header>
+    <h1>Bienvenue chez DevCorporation</h1>
+    <p>Votre partenaire en solutions numériques innovantes</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>Présentation</h2>
+        <p>
+            Nous somme une Entreprise spécialisée dans le développement web et la formation 
+            professionnelle. Nous aidons les entreprises et les particuliers à 
+            concrétiser leurs projets numériques grâce à notre expertise.
+        </p>
+    </section>
+
+    <section>
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Développement de sites web sur mesure</li>
+            <li>Formations WordPress et développement web</li>
+            <li>Maintenance et support technique</li>
+            <li>Conseil en stratégie digitale</li>
+            <li>Création d'applications web et mobiles</li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio – Thiery Mouncharou</title>
+</head>
+<body>
+
+<header>
     <img src="profil.jpg" alt="Photo de profil">
     <h1>Thiery Mouncharou</h1>
     <p>Développeur Web & Formateur WordPress</p>
@@ -175,7 +292,6 @@
             <span>Laravel</span><span>Git & GitHub</span>
         </div>
     </section>
-
     <section>
         <h2>Projets</h2>
         <div class="projects">
