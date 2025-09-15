@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présentation Entreprise avec QR Code</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f9fc;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    header {
+        background: linear-gradient(135deg, #4a90e2, #0078d4);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    section {
+        margin-bottom: 40px;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #0078d4;
+        margin-top: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        background: #e8f0fe;
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .qr-section {
+        text-align: center;
+    }
+
+    .qr-section img {
+        margin-top: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #f0f0f0;
+        color: #555;
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenue chez MonEntreprise</h1>
+    <p>Votre partenaire en solutions numériques innovantes</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>Présentation</h2>
+        <p>
+            MonEntreprise est spécialisée dans le développement web et la formation 
+            professionnelle. Nous aidons les entreprises et les particuliers à 
+            concrétiser leurs projets numériques grâce à notre expertise.
+        </p>
+    </section>
+
+    <section>
+        <h2>Nos Services</h2>
+        <ul>
+            <li>Développement de sites web sur mesure</li>
+            <li>Formations WordPress et développement web</li>
+            <li>Maintenance et support technique</li>
+            <li>Conseil en stratégie digitale</li>
+            <li>Création d'applications web et mobiles</li>
+            <li>Développement de sites web sur mesure 2 </li>
+            <li>Formations WordPress et développement web 2 </li>
+            <li>Maintenance et support technique 2 </li>
+            <li>Conseil en stratégie digitale 2 </li>
+            <li>Création d'applications web et mobiles 2 </li>
+        </ul>
+    </section>
+
+    <section class="qr-section">
+        <h2>Scannez le QR Code</h2>
+        <p>Retrouvez ce message complet sur votre smartphone :</p>
+        <!-- Génération du QR Code depuis un service gratuit -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=Bienvenue%20chez%20MonEntreprise%0A
+        Nous%20sommes%20spécialisés%20dans%20le%20développement%20web%20et%20la%20formation.%0A
+        Services:%0A
+        -Développement%20de%20sites%20web%20sur%20mesure%0A
+        -Formations%20WordPress%20et%20développement%20web%0A
+        -Maintenance%20et%20support%20technique%0A
+        -Conseil%20en%20stratégie%20digitale%0A
+        -Création%20d'applications%20web%20et%20mobiles
+        -Développement%20de%20sites%20web%20sur%20mesure%202%0A
+        -Formations%20WordPress%20et%20développement%20web%202%0A
+        -Maintenance%20et%20support%20technique%202%0A
+        -Conseil%20en%20stratégie%20digitale%202%0A
+        -Création%20d'applications%20web%20et%20mobiles%202&size=200x200" 
+        alt="QR Code">
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2025 MonEntreprise – Tous droits réservés
+</footer>
+
+</body>
+</html>
