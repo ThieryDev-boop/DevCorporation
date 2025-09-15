@@ -1,146 +1,218 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Présentation Entreprise avec QR Code</title>
+<title>Portfolio – Thiery Mouncharou</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f7f9fc;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        color: #333;
+    /* ----- Styles de base ----- */
+    :root {
+        --primary: #0078d4;
+        --dark: #222;
+        --light: #f7f9fc;
     }
 
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+    }
+
+    a {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    h1, h2, h3 {
+        margin-top: 0;
+    }
+
+    /* ----- Header ----- */
     header {
-        background: linear-gradient(135deg, #4a90e2, #0078d4);
+        background: linear-gradient(135deg, var(--primary), #005a9e);
         color: white;
         text-align: center;
-        padding: 40px 20px;
+        padding: 60px 20px;
+    }
+
+    header img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid white;
+        margin-bottom: 20px;
+        object-fit: cover;
     }
 
     header h1 {
-        margin: 0;
         font-size: 2.5em;
+        margin: 10px 0;
     }
 
     header p {
         font-size: 1.2em;
-        margin-top: 10px;
+        opacity: 0.9;
     }
 
+    /* ----- Container ----- */
     .container {
-        max-width: 900px;
+        max-width: 1000px;
         margin: 40px auto;
         padding: 0 20px;
     }
 
     section {
-        margin-bottom: 40px;
         background: white;
+        margin-bottom: 40px;
         padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
 
-    h2 {
-        color: #0078d4;
-        margin-top: 0;
+    section h2 {
+        color: var(--primary);
+        margin-bottom: 20px;
     }
 
-    ul {
-        list-style-type: none;
-        padding: 0;
+    /* ----- Skills ----- */
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-
-    ul li {
-        background: #e8f0fe;
-        margin: 10px 0;
-        padding: 10px 15px;
-        border-radius: 8px;
+    .skills-list span {
+        background: var(--light);
+        border: 1px solid #ddd;
+        padding: 8px 15px;
+        border-radius: 20px;
         font-weight: bold;
     }
 
-    .qr-section {
+    /* ----- Projects ----- */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .project {
+        background: var(--light);
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        transition: transform 0.2s;
+    }
+
+    .project:hover {
+        transform: scale(1.03);
+    }
+
+    .project img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    /* ----- Contact ----- */
+    .contact-info {
         text-align: center;
     }
 
-    .qr-section img {
-        margin-top: 20px;
-        width: 200px;
-        height: 200px;
+    .contact-info a {
+        display: inline-block;
+        margin: 5px 10px;
+        padding: 10px 20px;
+        background: var(--primary);
+        color: white;
+        border-radius: 30px;
+        transition: background 0.2s;
     }
 
+    .contact-info a:hover {
+        background: #005a9e;
+    }
+
+    /* ----- Footer ----- */
     footer {
         text-align: center;
         padding: 20px;
         background: #f0f0f0;
         color: #555;
-        margin-top: 40px;
     }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Bienvenue chez MonEntreprise</h1>
-    <p>Votre partenaire en solutions numériques innovantes</p>
+    <img src="profil.jpg" alt="Photo de profil">
+    <h1>Thiery Mouncharou</h1>
+    <p>Développeur Web & Formateur WordPress</p>
 </header>
 
 <div class="container">
 
     <section>
-        <h2>Présentation</h2>
+        <h2>À propos de moi</h2>
         <p>
-            MonEntreprise est spécialisée dans le développement web et la formation 
-            professionnelle. Nous aidons les entreprises et les particuliers à 
-            concrétiser leurs projets numériques grâce à notre expertise.
+            Passionné par le développement web et la transmission du savoir, 
+            je crée des applications modernes et forme les futurs développeurs. 
+            Mon objectif : allier pédagogie et innovation.
         </p>
     </section>
 
     <section>
-        <h2>Nos Services</h2>
-        <ul>
-            <li>Développement de sites web sur mesure</li>
-            <li>Formations WordPress et développement web</li>
-            <li>Maintenance et support technique</li>
-            <li>Conseil en stratégie digitale</li>
-            <li>Création d'applications web et mobiles</li>
-            <li>Développement de sites web sur mesure 2 </li>
-            <li>Formations WordPress et développement web 2 </li>
-            <li>Maintenance et support technique 2 </li>
-            <li>Conseil en stratégie digitale 2 </li>
-            <li>Création d'applications web et mobiles 2 </li>
-        </ul>
+        <h2>Compétences</h2>
+        <div class="skills-list">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>PHP</span><span>MySQL</span><span>WordPress</span>
+            <span>Laravel</span><span>Git & GitHub</span>
+        </div>
     </section>
 
-    <section class="qr-section">
-        <h2>Scannez le QR Code</h2>
-        <p>Retrouvez ce message complet sur votre smartphone :</p>
-        <!-- Génération du QR Code depuis un service gratuit -->
-        <img src="https://api.qrserver.com/v1/create-qr-code/?data=Bienvenue%20chez%20MonEntreprise%0A
-        Nous%20sommes%20spécialisés%20dans%20le%20développement%20web%20et%20la%20formation.%0A
-        Services:%0A
-        -Développement%20de%20sites%20web%20sur%20mesure%0A
-        -Formations%20WordPress%20et%20développement%20web%0A
-        -Maintenance%20et%20support%20technique%0A
-        -Conseil%20en%20stratégie%20digitale%0A
-        -Création%20d'applications%20web%20et%20mobiles
-        -Développement%20de%20sites%20web%20sur%20mesure%202%0A
-        -Formations%20WordPress%20et%20développement%20web%202%0A
-        -Maintenance%20et%20support%20technique%202%0A
-        -Conseil%20en%20stratégie%20digitale%202%0A
-        -Création%20d'applications%20web%20et%20mobiles%202&size=200x200" 
-        alt="QR Code">
+    <section>
+        <h2>Projets</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="https://via.placeholder.com/400x150" alt="Projet 1">
+                <div class="project-content">
+                    <h3>Plateforme de Formation</h3>
+                    <p>Une plateforme en ligne pour dispenser des cours de développement web.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://via.placeholder.com/400x150" alt="Projet 2">
+                <div class="project-content">
+                    <h3>Application de gestion de ventes</h3>
+                    <p>Application Visual Basic pour la gestion des ventes et du personnel.</p>
+                    <a href="#">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <h2>Contact</h2>
+        <p>Retrouvez-moi sur :</p>
+        <a href="mailto:mouncharout@gmail.com">Email</a>
+        <a href="https://t.me/659877980" target="_blank">Telegram</a>
+        <a href="https://wa.me/659877980" target="_blank">WhatsApp</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2025 MonEntreprise – Tous droits réservés
+    &copy; 2025 Thiery Mouncharou – Tous droits réservés
 </footer>
 
 </body>
 </html>
+
