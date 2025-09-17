@@ -1,334 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Présentation Entreprise avec QR Code</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f7f9fc;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        color: #333;
-    }
-
-    header {
-        background: linear-gradient(135deg, #4a90e2, #0078d4);
-        color: white;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 2.5em;
-    }
-
-    header p {
-        font-size: 1.2em;
-        margin-top: 10px;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-
-    section {
-        margin-bottom: 40px;
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-        color: #0078d4;
-        margin-top: 0;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    ul li {
-        background: #e8f0fe;
-        margin: 10px 0;
-        padding: 10px 15px;
-        border-radius: 8px;
-        font-weight: bold;
-    }
-
-    .qr-section {
-        text-align: center;
-    }
-
-    .qr-section img {
-        margin-top: 20px;
-        width: 200px;
-        height: 200px;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #f0f0f0;
-        color: #555;
-        margin-top: 40px;
-    }
-
-
-        /* ----- Styles de base ----- */
-    :root {
-        --primary: #0078d4;
-        --dark: #222;
-        --light: #f7f9fc;
-    }
-
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: var(--light);
-        color: var(--dark);
-        line-height: 1.6;
-    }
-
-    a {
-        color: var(--primary);
-        text-decoration: none;
-    }
-
-    h1, h2, h3 {
-        margin-top: 0;
-    }
-
-    /* ----- Header ----- */
-    header {
-        background: linear-gradient(135deg, var(--primary), #005a9e);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-    }
-
-    header img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 4px solid white;
-        margin-bottom: 20px;
-        object-fit: cover;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-        margin: 10px 0;
-    }
-
-    header p {
-        font-size: 1.2em;
-        opacity: 0.9;
-    }
-
-    /* ----- Container ----- */
-    .container {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-
-    section {
-        background: white;
-        margin-bottom: 40px;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    }
-
-    section h2 {
-        color: var(--primary);
-        margin-bottom: 20px;
-    }
-
-    /* ----- Skills ----- */
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .skills-list span {
-        background: var(--light);
-        border: 1px solid #ddd;
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-    }
-
-    /* ----- Projects ----- */
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .project {
-        background: var(--light);
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #ddd;
-        transition: transform 0.2s;
-    }
-
-    .project:hover {
-        transform: scale(1.03);
-    }
-
-    .project img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-    }
-
-    .project-content {
-        padding: 15px;
-    }
-
-    /* ----- Contact ----- */
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-info a {
-        display: inline-block;
-        margin: 5px 10px;
-        padding: 10px 20px;
-        background: var(--primary);
-        color: white;
-        border-radius: 30px;
-        transition: background 0.2s;
-    }
-
-    .contact-info a:hover {
-        background: #005a9e;
-    }
-
-    /* ----- Footer ----- */
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #f0f0f0;
-        color: #555;
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- ====== HEADER ====== -->
 <header>
-    <h1>Bienvenue chez DevCorporation</h1>
-    <p>Votre partenaire en solutions numériques innovantes</p>
+  <div class="logo">MON<span>PORTFOLIO</span></div>
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="#experience">Mes expériences</a>
+    <a href="#projects">Mes projets</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- ====== HERO ====== -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Bonjour,<br> je suis <span class="highlight">Thiery Mouncharou</span></h1>
+    <p>Je suis un développeur fullstack
+       avec 2 ans d'expérience, utilisant PHP
+       et Laravel . Contactez-moi si vous avez besoin de mes services.</p>
+    <a href="#contact" class="btn">Contactez-moi</a>
+  </div>
+  <div class="hero-image">
+    <img src="profil.jpg" alt="Photo profil">
+  </div>
+</section>
 
-    <section>
-        <h2>Présentation</h2>
-        <p>
-            Nous somme une Entreprise spécialisée dans le développement web et la formation 
-            professionnelle. Nous aidons les entreprises et les particuliers à 
-            concrétiser leurs projets numériques grâce à notre expertise.
-        </p>
-    </section>
+<!-- ====== ABOUT ====== -->
+<section id="about" class="about">
+  <h2>À PROPOS</h2>
+  <div class="about-content">
+    <img src="profil.jpg" alt="Photo profil">
+    <div class="skills">
+      <div class="card">
+        <h3>Développeur Frontend</h3>
+        <p>Je suis un développeur frontend avec une bonne expérience.</p>
+      </div>
+      <div class="card">
+        <h3>Développeur Backend</h3>
+        <p>Je maîtrise les bases du développement backend pour créer des APIs robustes.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-        <h2>Nos Services</h2>
-        <ul>
-            <li>Développement de sites web sur mesure</li>
-            <li>Formations WordPress et développement web</li>
-            <li>Maintenance et support technique</li>
-            <li>Conseil en stratégie digitale</li>
-            <li>Création d'applications web et mobiles</li>
-        </ul>
-    </section>
-</div>
+<!-- ====== PROJECTS ====== -->
+<section id="projects" class="projects">
+  <h2>MES PROJETS</h2>
+  <div class="project-list">
 
-</body>
-</html>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="projet 1">
+      <h3>Gestionnaire de tâches</h3>
+      <p>J'ai recemment crée une application de gestion de tâches pour me permettre de bien m'organiser dans la dans la gestion de mon temps et aussi adopter une bonne discipline ...</p>
+      <div class="tags"><span>PHP</span><span>Laravel</span><span>Bootstrapp</span></div>
+      <a href="#" class="btn">Demo</a>
+    </div>
 
+    <div class="project">
+      <img src="images/urbain.jpg" alt="projet 2">
+      <h3>URBAN WAY</h3>
+      <p>Une plateforme de transport inter urbain en vue de faciliter la tache aux agences de transport inter urbain...</p>
+      <div class="tags"><span>PHP</span><span>CodeIgniter</span><span>Javascript</span></div>
+      <a href="#" class="btn">Demo</a>
+    </div>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio – Thiery Mouncharou</title>
-</head>
-<body>
+    <div class="project">
+      <img src="images/mdp.jpg" alt="projet 3">
+      <h3>Site web vitrine </h3>
+      <p>J'ai egalement developper le site de L'entreprise MD & Partners...</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>PHP</span></div>
+      <a href="#" class="btn">Demo</a>
+    </div>
 
-<header>
-    <img src="profil.jpg" alt="Photo de profil">
-    <h1>Thiery Mouncharou</h1>
-    <p>Développeur Web & Formateur WordPress</p>
-</header>
+  </div>
+</section>
 
-<div class="container">
+<section id="projects" class="projects">
+  <h2>MES CONTACTS</h2>
+  <div class="project-list">
 
-    <section>
-        <h2>À propos de moi</h2>
-        <p>
-            Passionné par le développement web et la transmission du savoir, 
-            je crée des applications modernes et forme les futurs développeurs. 
-            Mon objectif : allier pédagogie et innovation.
-        </p>
-    </section>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="Whatssap">
+      <h3>Whatssap</h3>
+      <a href="https://wa.me/659877980" target="_blank" class="btn">M'ecrire</a>
+    </div>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="telegram">
+      <h3>Telegram</h3>
+      <a href="https://t.me/659877980" target="_blank" class="btn">M'ecrire</a>
+    </div>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="email">
+      <h3>Email</h3>
+      <a href="mailto:mouncharout@gmail.com" class="btn">M'ecrire</a>
+    </div>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="github">
+      <h3>Github</h3>
+      <a href="https://github.com/" target="_blank" class="btn">M'ecrire</a>
+    </div>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="linkedin">
+      <h3>Linkedin</h3>
+      <a href="https://github.com/" target="_blank" class="btn">M'ecrire</a>
+    </div>
+    <div class="project">
+      <img src="images/gestach.jpg" alt="facebook">
+      <h3>Facebook</h3>
+      <a href="https://github.com/" target="_blank" class="btn">M'ecrire</a>
+    </div>
+</section>
 
-    <section>
-        <h2>Compétences</h2>
-        <div class="skills-list">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-            <span>PHP</span><span>MySQL</span><span>WordPress</span>
-            <span>Laravel</span><span>Git & GitHub</span>
-        </div>
-    </section>
-    <section>
-        <h2>Projets</h2>
-        <div class="projects">
-            <div class="project">
-                <img src="https://via.placeholder.com/400x150" alt="Projet 1">
-                <div class="project-content">
-                    <h3>Plateforme de Formation</h3>
-                    <p>Une plateforme en ligne pour dispenser des cours de développement web.</p>
-                    <a href="#">Voir le projet</a>
-                </div>
-            </div>
-            <div class="project">
-                <img src="https://via.placeholder.com/400x150" alt="Projet 2">
-                <div class="project-content">
-                    <h3>Application de gestion de ventes</h3>
-                    <p>Application Visual Basic pour la gestion des ventes et du personnel.</p>
-                    <a href="#">Voir le projet</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-info">
-        <h2>Contact</h2>
-        <p>Retrouvez-moi sur :</p>
-        <a href="mailto:mouncharout@gmail.com">Email</a>
-        <a href="https://t.me/659877980" target="_blank">Telegram</a>
-        <a href="https://wa.me/659877980" target="_blank">WhatsApp</a>
-        <a href="https://github.com/" target="_blank">GitHub</a>
-    </section>
-
-</div>
-
-<footer>
-    &copy; 2025 Thiery Mouncharou – Tous droits réservés
+<!-- ====== FOOTER ====== -->
+<footer id="contact">
+  <p>© 2025 Thiery Dev – Tous droits réservés.</p>
 </footer>
 
 </body>
 </html>
-
