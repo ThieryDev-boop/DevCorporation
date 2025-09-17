@@ -1,0 +1,214 @@
+:root {
+  --main-bg: #1d1f2f;
+  --accent: #f5a552;
+  --text: #fff;
+  --text-secondary: #ccc;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--main-bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background: var(--main-bg);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:100;
+}
+.logo {
+  font-size:1.3rem;
+  font-weight:bold;
+}
+.logo span {color: var(--accent);}
+nav a {
+  margin-left:30px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
+}
+nav a:hover {color: var(--accent);}
+
+/* ---------- HERO ---------- */
+.hero {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:120px 50px 60px;
+  min-height:100vh;
+  gap:40px;
+}
+.hero-text {max-width:50%;}
+.hero-text h1 {
+  font-size:3rem;
+  margin-bottom:20px;
+}
+.highlight {color: var(--accent);}
+.hero-text p {
+  margin-bottom:30px;
+  color:var(--text-secondary);
+}
+.btn {
+  background: var(--accent);
+  color:#000;
+  padding:12px 25px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:600;
+}
+.hero-image img {
+  max-width:400px;
+  border-radius:30% 70% 70% 30%/30% 30% 70% 70%;
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+  padding:80px 50px;
+}
+.about h2 {
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2rem;
+}
+.about-content {
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:40px;
+}
+.about-content img {
+  max-width:300px;
+  border-radius:15px;
+}
+.skills .card {
+  background:#262838;
+  padding:20px;
+  margin:15px 0;
+  border-radius:10px;
+}
+
+/* ---------- PROJECTS ---------- */
+.projects {
+  padding:80px 50px;
+}
+.projects h2 {
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2rem;
+}
+.project-list {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.project {
+  background:#262838;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+}
+.project img {
+  width:100%;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+.tags span {
+  display:inline-block;
+  background:#444;
+  color:var(--text);
+  padding:5px 10px;
+  margin:5px;
+  border-radius:5px;
+  font-size:0.8rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align:center;
+  padding:30px;
+  background:#181926;
+  color:var(--text-secondary);
+  margin-top:60px;
+}
+
+/* =====================================================
+   ===============  RESPONSIVE  ========================
+   ===================================================== */
+
+/* Tablettes */
+@media (max-width: 992px) {
+  header {
+    padding:20px 30px;
+  }
+  .hero-text {max-width:60%;}
+  .hero-text h1 {font-size:2.5rem;}
+  .hero-image img {max-width:300px;}
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  header {
+    flex-direction:column;
+    padding:15px 20px;
+  }
+  nav {
+    margin-top:10px;
+  }
+  nav a {
+    margin:0 10px;
+    font-size:0.95rem;
+  }
+
+  .hero {
+    flex-direction:column-reverse;
+    padding:100px 20px 40px;
+    text-align:center;
+  }
+  .hero-text {
+    max-width:100%;
+  }
+  .hero-text h1 {
+    font-size:2rem;
+  }
+  .hero-image img {
+    max-width:250px;
+    margin-bottom:20px;
+  }
+
+  .about {
+    padding:60px 20px;
+  }
+  .about-content {
+    flex-direction:column;
+    text-align:center;
+  }
+  .about-content img {
+    max-width:220px;
+  }
+
+  .projects {
+    padding:60px 20px;
+  }
+  .project-list {
+    grid-template-columns:1fr;
+  }
+
+  footer {
+    padding:20px;
+    font-size:0.9rem;
+  }
+}
