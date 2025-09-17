@@ -212,3 +212,24 @@ footer {
     font-size:0.9rem;
   }
 }
+
+.contacts-list {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+.contacts {
+  background:#262838;
+  border-radius:12px;
+  padding:30px;
+  text-align:center;
+}
+.contacts img {
+  width:50%;
+  border-radius:30px;
+  margin-bottom:15px;
+}
+
+.contacts h3{
+ margin-bottom: 15px;
+}
