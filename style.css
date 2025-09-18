@@ -206,11 +206,67 @@ footer {
   .project-list {
     grid-template-columns:1fr;
   }
+  .footer {
+  background: #0d0d0d;          /* couleur de fond du footer */
+  color: #fff;                  /* texte en blanc */
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
 
-  footer {
-    padding:20px;
-    font-size:0.9rem;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;              /* permet de passer en colonne sur mobile */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo */
+.footer-logo img {
+  height: 10px;                 /* adapte la taille à ton logo */
+  object-fit: contain;
+}
+
+/* Menu */
+.footer-menu {
+  display: flex;
+  gap: 25px;
+}
+.footer-menu a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+.footer-menu a:hover {
+  color: #fff;
+}
+
+/* Copyright */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  flex: 1 1 100%;              /* prend toute la largeur en bas sur mobile */
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 10px;
+}
+
+/* Responsive : passe en colonne sous 768px */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
+  .footer-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 }
 
 .contacts-list {
@@ -294,4 +350,35 @@ footer {
 
     .scene:hover .cube{
   animation-play-state: paused;
+}
+
+/*animation carousselle*/
+    .carousel-infinite {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.track {
+  display: flex;
+  gap: 40px;            /* espace entre logos */
+  animation: scroll 20s linear infinite;
+}
+
+.track img {
+  height: 80px;         /* ajuste la taille des logos */
+  flex-shrink: 0;       /* empêche le redimensionnement */
+  object-fit: contain;
+}
+
+/* animation de translation horizontale */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* décale la moitié du ruban */
+}
+@media (max-width: 600px) {
+  .track img {
+    height: 50px; /* logos un peu plus petits sur smartphone */
+  }
 }
