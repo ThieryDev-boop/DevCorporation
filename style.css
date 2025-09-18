@@ -233,3 +233,65 @@ footer {
 .contacts h3{
  margin-bottom: 15px;
 }
+
+
+
+----------------------------------------
+---------------------------------cube
+    /* Conteneur avec perspective */
+    .scene {
+        width: 200px;
+        height: 200px;
+        perspective: 800px; /* Donne l’effet 3D */
+        padding: 80px;
+    }
+     .scene1 {
+        width: 200px;
+        height: 200px;
+        perspective: 800px; /* Donne l’effet 3D */
+        padding-right: 200px;
+        padding-bottom: 450px;
+    }
+
+    /* Cube */
+    .cube {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: rotate 6s infinite linear;
+    }
+
+    /* Faces du cube */
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: rgba(0, 150, 255, 0.7);
+        border: 2px solid #fff;
+        font-size: 40px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Positionnement des 6 faces */
+    .front  { transform: translateZ(100px); 
+          background-image: url('profil.jpeg'); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+
+    .right  { transform: rotateY(90deg)  translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg)  translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    /* Animation de rotation */
+    @keyframes rotate {
+        from { transform: rotateX(0deg) rotateY(0deg); }
+        to   { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    .scene:hover .cube{
+  animation-play-state: paused;
+}
