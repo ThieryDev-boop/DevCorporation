@@ -353,32 +353,51 @@ footer {
 }
 
 /*animation carousselle*/
-    .carousel-infinite {
+ .carousel-infinite {
   width: 100%;
   overflow: hidden;
-  background: #fff;
+  background: #fff;        /* couleur de fond facultative */
   padding: 10px 0;
 }
 
 .track {
   display: flex;
-  gap: 40px;            /* espace entre logos */
+  gap: 40px;               /* espace entre les logos */
   animation: scroll 20s linear infinite;
 }
 
 .track img {
-  height: 80px;         /* ajuste la taille des logos */
-  flex-shrink: 0;       /* empêche le redimensionnement */
+  height: 80px;            /* taille de base des logos */
+  flex-shrink: 0;          /* empêche le redimensionnement horizontal */
   object-fit: contain;
 }
 
-/* animation de translation horizontale */
+/* Animation du défilement horizontal */
 @keyframes scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* décale la moitié du ruban */
+  100% { transform: translateX(-50%); }
 }
-@media (max-width: 600px) {
+
+/* =======================
+   >>> Responsive <<<
+   =======================*/
+
+/* Tablettes : on réduit un peu la taille et l’espace */
+@media (max-width: 992px) {
+  .track {
+    gap: 30px;
+  }
   .track img {
-    height: 50px; /* logos un peu plus petits sur smartphone */
+    height: 65px;
+  }
+}
+
+/* Smartphones : logos plus petits et gap réduit */
+@media (max-width: 600px) {
+  .track {
+    gap: 20px;
+  }
+  .track img {
+    height: 50px;
   }
 }
