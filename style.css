@@ -291,107 +291,6 @@ footer {
 }
 
 
-
-----------------------------------------
----------------------------------cube
-    /* Conteneur avec perspective */
-    .scene {
-        width: 200px;
-        height: 200px;
-        perspective: 800px; /* Donne l’effet 3D */
-        padding: 80px;
-    }
-     .scene1 {
-        width: 200px;
-        height: 200px;
-        perspective: 800px; /* Donne l’effet 3D */
-        padding-right: 200px;
-        padding-bottom: 450px;
-    }
-
-    /* Cube */
-    .cube {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        animation: rotate 6s infinite linear;
-    }
-
-    /* Faces du cube */
-    .face {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: rgba(0, 150, 255, 0.7);
-        border: 2px solid #fff;
-        font-size: 40px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Positionnement des 6 faces */
-    .front  { transform: translateZ(100px); 
-          background-image: url('profil.jpeg'); }
-    .back   { transform: rotateY(180deg) translateZ(100px); }
-
-    .right  { transform: rotateY(90deg)  translateZ(100px); }
-    .left   { transform: rotateY(-90deg) translateZ(100px); }
-    .top    { transform: rotateX(90deg)  translateZ(100px); }
-    .bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-    /* Animation de rotation */
-    @keyframes rotate {
-        from { transform: rotateX(0deg) rotateY(0deg); }
-        to   { transform: rotateX(360deg) rotateY(360deg); }
-    }
-
-    .scene:hover .cube{
-  animation-play-state: paused;
-}
-
-/*animation carousselle*/
- .carousel-infinite {
-  width: 100%;
-  overflow: hidden;
-  background: #fff;        /* couleur de fond facultative */
-  padding: 10px 0;
-}
-
-.track {
-  display: flex;
-  gap: 40px;               /* espace entre les logos */
-  animation: scroll 20s linear infinite;
-}
-
-.track img {
-  height: 80px;            /* taille de base des logos */
-  flex-shrink: 0;          /* empêche le redimensionnement horizontal */
-  object-fit: contain;
-}
-
-/* Animation du défilement horizontal */
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* =======================
-   >>> Responsive <<<
-   =======================*/
-
-/* Tablettes : on réduit un peu la taille et l’espace */
-@media (max-width: 992px) {
-  .track {
-    gap: 30px;
-  }
-  .track img {
-    height: 65px;
-  }
-}
-
 /* Smartphones : logos plus petits et gap réduit */
 @media (max-width: 600px) {
   .track {
@@ -473,5 +372,99 @@ footer {
   }
 }
 
+/* ----------- NAVBAR ----------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111426;
+  color: var(--text);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+.logo span {
+  color: var(--text);
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111426;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  nav ul.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Animation du hamburger */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
 
 
