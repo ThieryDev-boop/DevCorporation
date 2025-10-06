@@ -7,12 +7,19 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- ===== HEADER / NAVBAR ===== -->
 <header class="navbar">
   <div class="logo">Thiery <span>Dev</span></div>
+
+  <!-- Bouton hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
   <!-- Menu principal -->
   <nav id="nav-menu">
@@ -21,17 +28,11 @@
       <li><a href="#about">À propos</a></li>
       <li><a href="#projects">Mes projets</a></li>
       <li><a href="#experience">Expériences</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contacts">contacts</a></li>
     </ul>
   </nav>
-
-  <!-- Bouton hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
 </header>
+
 
 
 <!-- ====== HERO ====== -->
@@ -54,7 +55,7 @@
 
 <!-- ====== ABOUT ====== -->
 <section id="about" class="about">
-  <h2>À PROPOS</h2>
+  <h2>À PROPOS DE MOI !</h2>
   <div class="about-content">
     <img src="profil.jpg" alt="Photo profil">
     <div class="skills">
@@ -143,7 +144,7 @@
   <div class="experience-item">
     <img src="mdpartners.png" alt="MD Partners">
     <div class="experience-text">
-      <h3>Freelance – Site web du cabinet comptable MD² PARTNERS</h3>
+      <h3>Freelance – Site web du cabinet comptable MD & PARTNERS</h3>
       <p class="date">20 mai 2022 → 23 mai 2023</p>
       <p>Conception et réalisation complète d’un site vitrine professionnel pour un cabinet comptable, avec intégration de formulaires et d’éléments dynamiques.</p>
     </div>
@@ -178,7 +179,7 @@
 </section>
 
 
-<section id="projects" class="projects">
+<section id="contacts" class="contacts">
   <h2>MES CONTACTS</h2>
   <div class="project-list">
 
@@ -237,6 +238,23 @@
   </div>
 </footer>
 
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('#nav-menu ul');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Ferme le menu quand on clique sur un lien
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
