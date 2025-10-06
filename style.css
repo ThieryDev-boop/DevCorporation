@@ -401,3 +401,77 @@ footer {
     height: 50px;
   }
 }
+
+
+/* ---------- EXPERIENCES ---------- */
+.experience {
+  padding: 80px 50px;
+  background: #1d1f2f;
+}
+.experience h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.experience-item img {
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.experience-text {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+.experience-text h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.experience-text .date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.experience-text p {
+  line-height: 1.6;
+}
+
+.experience-text ul {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* Inversion horizontale */
+.experience-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-item,
+  .experience-item.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .experience-item img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+
