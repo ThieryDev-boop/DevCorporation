@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte de contact</title>
+<style >
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e5e9f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #0b284a;
+  color: #fff;
+  border-radius: 20px;
+  width: 340px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.profile {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  margin-bottom: 10px;
+}
+
+.role {
+  color: #cfd9e6;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  background-color: #102b57;
+  padding: 15px 0;
+}
+
+.icon {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+.icon span {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.info {
+  background: white;
+  color: #333;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.add-contact {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #0b284a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-top: 1px solid #cfd9e6;
+}
+
+.add-contact:hover {
+  background-color: #123b6a;
+}
+
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="profile">
+      <img src="boos2.jpg" alt="Photo de profil" class="avatar" />
+      <h2>Ursula Yamdjeu</h2>
+      <p class="role">CEO</p>
+    </div>
+
+    <div class="actions">
+      <a href="tel:+237650107777" class="icon">📞<br><span>Appeler</span></a>
+      <a href="sms:+237650107777" class="icon">💬<br><span>SMS</span></a>
+      <a href="mailto:ursula.yamdjeu@example.com" class="icon">✉️<br><span>Email</span></a>
+      <a href="https://ursulayamdjeu.com" class="icon">🌐<br><span>site Web</span></a>
+    </div>
+
+    <div class="info">
+      <p><strong>Contact:</strong> +237 650107777</p>
+      <p><strong>Email:</strong> yamsursula@gmail.com</p>
+      <p><strong>Address:</strong> Bastos-Yaoundé, Cameroun</p>
+    </div>
+
+    <!-- Bouton qui déclenche le téléchargement du contact -->
+    <button class="add-contact" onclick="downloadVCard()">+ Ajouter</button>
+  </div>
+
+  <script>
+    function downloadVCard() {
+      // Contenu du fichier .vcf (vCard)
+      const vcardData = `
+BEGIN:VCARD
+VERSION:3.0
+N:Ursula;Yamdjeu;;;
+FN:Ursula Yamdjeu
+TITLE:CEO
+TEL;TYPE=CELL:+237650107777
+EMAIL;TYPE=WORK:ursula.yamdjeu@example.com
+ADR;TYPE=WORK:;;Yaoundé;;;;
+ORG:Company Name
+URL:https://ursulayamdjeu.com
+END:VCARD
+`;
+
+      // Créer un blob (fichier virtuel)
+      const blob = new Blob([vcardData], { type: "text/vcard" });
+
+      // Créer un lien de téléchargement temporaire
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Ursula_Yamdjeu.vcf";
+      a.click();
+
+      // Libérer l’URL pour éviter les fuites mémoire
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
