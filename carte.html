@@ -98,21 +98,21 @@ body {
   <div class="card">
     <div class="profile">
       <img src="boos2.jpg" alt="Photo de profil" class="avatar" />
-      <h2>Ursula Yamdjeu</h2>
-      <p class="role">CEO</p>
+      <h2>Thiery Mouncharou</h2>
+      <p class="role">Formateur Developpeur Web</p>
     </div>
 
     <div class="actions">
-      <a href="tel:+237650107777" class="icon">📞<br><span>Appeler</span></a>
-      <a href="sms:+237650107777" class="icon">💬<br><span>SMS</span></a>
-      <a href="mailto:ursula.yamdjeu@example.com" class="icon">✉️<br><span>Email</span></a>
-      <a href="https://ursulayamdjeu.com" class="icon">🌐<br><span>site Web</span></a>
+      <a href="tel:+237659877980" class="icon">📞<br><span>Appeler</span></a>
+      <a href="sms:+237659877980" class="icon">💬<br><span>SMS</span></a>
+      <a href="mailto:mouncharout@gmail.com" class="icon">✉️<br><span>Email</span></a>
+      <a href="https://iamthierydev.vercel.app/" class="icon">🌐<br><span>site Web</span></a>
     </div>
 
     <div class="info">
-      <p><strong>Contact:</strong> +237 650107777</p>
-      <p><strong>Email:</strong> yamsursula@gmail.com</p>
-      <p><strong>Address:</strong> Bastos-Yaoundé, Cameroun</p>
+      <p><strong>Contact:</strong> +237 659877980</p>
+      <p><strong>Email:</strong> mouncharout@gmail.com</p>
+      <p><strong>Adresse:</strong> Logpom, Douala-Cameroun</p>
     </div>
 
     <!-- Bouton qui déclenche le téléchargement du contact -->
@@ -125,14 +125,14 @@ body {
       const vcardData = `
 BEGIN:VCARD
 VERSION:3.0
-N:Ursula;Yamdjeu;;;
-FN:Ursula Yamdjeu
-TITLE:CEO
-TEL;TYPE=CELL:+237650107777
-EMAIL;TYPE=WORK:ursula.yamdjeu@example.com
-ADR;TYPE=WORK:;;Yaoundé;;;;
+N:Mouncharou;Thiery;;;
+FN:Mouncharou Thiery
+TITLE:Formateur Developpeur Web
+TEL;TYPE=CELL:+237659877980
+EMAIL;TYPE=WORK:mouncharout@gmail.com
+ADR;TYPE=WORK:;;Douala;;;;
 ORG:Company Name
-URL:https://ursulayamdjeu.com
+URL:https://iamthierydev.vercel.app
 END:VCARD
 `;
 
@@ -142,7 +142,7 @@ END:VCARD
       // Créer un lien de téléchargement temporaire
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "Ursula_Yamdjeu.vcf";
+      a.download = "ThieryMouncharou.vcf";
       a.click();
 
       // Libérer l’URL pour éviter les fuites mémoire
