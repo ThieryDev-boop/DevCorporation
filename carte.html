@@ -1,125 +1,247 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carte de contact</title>
-<style >
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Professionnelle</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+<style>
+    /* ====== GENERAL ====== */
 body {
-  background-color: #e5e9f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f7f7;
+    color: #333;
 }
 
-.card {
-  background-color: #0b284a;
-  color: #fff;
-  border-radius: 20px;
-  width: 340px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+/* ====== HEADER ====== */
+.header {
+    height: 180px;
+    background: #123b6a;
 }
 
-.profile {
-  text-align: center;
-  padding: 30px 20px;
+/* ====== PROFILE CARD ====== */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-top: -120px;
 }
 
-.avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  margin-bottom: 10px;
+.profile-card {
+    text-align: center;
 }
 
-.role {
-  color: #cfd9e6;
-  font-size: 14px;
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 6px solid #f5a552;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.actions {
-  display: flex;
-  justify-content: space-around;
-  background-color: #102b57;
-  padding: 15px 0;
+.profile-name {
+    margin-top: 15px;
+    font-size: 26px;
+    font-weight: 600;
 }
 
-.icon {
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 16px;
+.profile-job {
+    color: #777;
+    font-size: 16px;
+    line-height: 22px;
 }
 
-.icon span {
-  display: block;
-  font-size: 13px;
-  margin-top: 5px;
+.profile-job span {
+    display: block;
+    font-size: 15px;
 }
 
-.info {
-  background: white;
-  color: #333;
-  padding: 15px;
-  font-size: 14px;
-  line-height: 1.6;
+/* ====== ACTION BUTTONS ====== */
+.action-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 }
 
+.action-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #123b6a;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    font-size: 22px;
+    color: #f5a552;
+    transition: 0.3s;
+}
+
+
+#f5a552
+
+
+
+
+.action-btn:hover {
+    background: #7A0C0C;
+    color: white;
+}
+
+/* ====== INFORMATION SECTION ====== */
+.info-section {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.info-item {
+    display: flex;
+    gap: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item i {
+    font-size: 26px;
+    color: #f5a552;
+    margin-top: 5px;
+}
+
+.map-btn {
+    margin-top: 8px;
+    background: #123b6a;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #f5a552;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    background: #7A0C0C;
+    color: white;
+}
+
+/* ====== ADD CONTACT BUTTON ====== */
 .add-contact {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  background-color: #0b284a;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-top: 1px solid #cfd9e6;
+    margin-top: 25px;
+    width: 100%;
+    padding: 16px;
+    background: #123b6a;
+    color: #f5a552;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .add-contact:hover {
-  background-color: #123b6a;
+    background: #5e0808;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+    .info-section {
+        padding: 10px;
+    }
+
+    .profile-name {
+        font-size: 22px;
+    }
+
+    .action-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
 }
 
 </style>
 </head>
+
 <body>
-  <div class="card">
-    <div class="profile">
-      <img src="boos2.jpg" alt="Photo de profil" class="avatar" />
-      <h2>Thiery Mouncharou</h2>
-      <p class="role">Formateur Developpeur Web</p>
-    </div>
 
-    <div class="actions">
-      <a href="tel:+237659877980" class="icon">📞<br><span>Appeler</span></a>
-      <a href="sms:+237659877980" class="icon">💬<br><span>SMS</span></a>
-      <a href="mailto:mouncharout@gmail.com" class="icon">✉️<br><span>Email</span></a>
-      <a href="https://iamthierydev.vercel.app/" class="icon">🌐<br><span>site Web</span></a>
-    </div>
+    <header class="header"></header>
 
-    <div class="info">
-      <p><strong>Contact:</strong> +237 659877980</p>
-      <p><strong>Email:</strong> mouncharout@gmail.com</p>
-      <p><strong>Adresse:</strong> Logpom, Douala-Cameroun</p>
-    </div>
+    <section class="profile-section">
+        <div class="profile-card">
 
-    <!-- Bouton qui déclenche le téléchargement du contact -->
-    <button class="add-contact" onclick="downloadVCard()">+ Ajouter</button>
-  </div>
+            <img src="boos2.jpg" class="profile-img" alt="Photo de profil">
 
-  <script>
+            <h1 class="profile-name">Thiery Magloire Mouncharou</h1>
+            <p class="profile-job"><span>Developpeur web et formateur</span></p>
+
+            <div class="action-buttons">
+                <a href="tel:+237659877980" class="action-btn"><i class="fa fa-phone"></i></a>
+                <a href="mailto:mouncharout@gmail.com" class="action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="sms:+237659877980" class="action-btn">💬</a>
+                <a href="https://www.google.com/maps?q=4.084153,9.772447
+" class="action-btn"><i class="fa fa-location-dot"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+
+        <div class="info-card">
+            <div class="info-item">
+                <i class="fa fa-phone"></i>
+                <div>
+                    <h4>Téléphone</h4>
+                    <p>+237 659877980</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa fa-envelope"></i>
+                <div>
+                    <h4>Adresse e-mail</h4>
+                    <p>mouncharout@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa fa-location-dot"></i>
+                <div>
+                    <h4>Lieu</h4>
+                    <p>Logpom, Douala, Région du Littoral, Cameroun</p>
+
+                    <button class="map-btn" onclick="openMap()">
+                        Afficher sur la carte
+                    </button>
+
+                </div>
+            </div>
+        </div>
+<button class="add-contact" onclick="downloadVCard()">
+    <i class="fa fa-user-plus"></i> Ajouter contact
+</button>
+
+
+    </section>
+<script>
     function downloadVCard() {
       // Contenu du fichier .vcf (vCard)
       const vcardData = `
@@ -148,6 +270,16 @@ END:VCARD
       // Libérer l’URL pour éviter les fuites mémoire
       URL.revokeObjectURL(a.href);
     }
-  </script>
+
+    function openMap() {
+    const latitude = 4.084153;
+    const longitude = 9.772447;
+
+    const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+    window.open(mapUrl, "_blank");
+}
+
+</script>
 </body>
 </html>
